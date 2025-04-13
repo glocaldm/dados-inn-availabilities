@@ -16,13 +16,7 @@ def fetch_and_store_data(request):
         print(data)
 
         # Return the fetched data
-        return {
-            "statusCode": 200,
-            "body": data,
-            "headers": {
-                "Content-Type": "text/html"
-            }
-        }
+        return data
 
     except requests.RequestException as e:
         return {
