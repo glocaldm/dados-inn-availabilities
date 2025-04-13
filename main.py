@@ -2,7 +2,7 @@ from flask import Flask, request, make_response
 import requests
 import functions_framework
 
-ALLOWED_ORIGIN = "https://obscure-fiesta-4j669jrqpvg7376qg-4200.app.github.dev"
+ALLOWED_ORIGIN = "https://glocaldm.github.io"
 external_url = "https://ical.booking.com/v1/export?t=219b9892-bf77-4998-b804-30590502eaf6"
 
 @functions_framework.http
