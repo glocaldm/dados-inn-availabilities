@@ -22,8 +22,8 @@ def fetch_and_store_data(request):
 
     # Handle GET or POST request
     if request.method in ['GET']:
-        text_data = requests.get(external_url).content
-        response = make_response({text_data})
+        text_data = requests.get(external_url).
+        response = make_response(text_data)
         response.headers.update(cors_headers)
         response.headers['Content-Type'] = 'text/plain'
         return response
