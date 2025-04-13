@@ -9,7 +9,7 @@ def fetch_and_store_data(request):
     origin = request.headers.get("Origin")
 
     headers = {
-        "Access-Control-Allow-Origin": origin if origin in allowed_origins else "",
+        "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "GET",
         "Access-Control-Allow-Headers": "Content-Type",
         "Access-Control-Max-Age": "3600"
@@ -32,19 +32,12 @@ def fetch_and_store_data(request):
         return {
             "statusCode": 502,
             "body": json.dumps({"error": str(e)}),
-            "headers": {
-                "Content-Type": "application/json"
-            }
+            "headers": headers
         }
 
     except Exception as e:
         return {
             "statusCode": 500,
             "body": json.dumps({"error": str(e)}),
-            "headers": {
-                "Content-Type": "application/json"
-            }
+            "headers": headers
         }
-
-if __name__ == '__main__':
-    fetch_and_store_data(None)
