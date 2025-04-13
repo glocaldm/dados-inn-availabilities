@@ -1,4 +1,5 @@
 from flask import Flask, request, make_response
+import requests
 import functions_framework
 
 ALLOWED_ORIGIN = "https://obscure-fiesta-4j669jrqpvg7376qg-4200.app.github.dev"
@@ -20,8 +21,8 @@ def fetch_and_store_data(request):
         return ('', 204, cors_headers)
 
     # Handle GET or POST request
-    if request.method in ['POST', 'GET']:
-        text_data = request.get_data(as_text=True) or "No data provided."
+    if request.method in ['GET']:
+        text_data = requests.get(external_url)
         response = make_response(f"Received text:\n{text_data}")
         response.headers.update(cors_headers)
         response.headers['Content-Type'] = 'text/plain'
