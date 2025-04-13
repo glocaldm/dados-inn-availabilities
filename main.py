@@ -3,7 +3,6 @@ import requests
 import json
 
 @functions_framework.http
-# def lambda_handler(event, context):
 def fetch_and_store_data(request):
 
     # URL of the external resource
