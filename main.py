@@ -13,6 +13,7 @@ def fetch_and_store_data(request):
         response = requests.get(external_url)
         response.raise_for_status()
         data = response.text
+        print(data)
 
         # Return the fetched data
         return {
